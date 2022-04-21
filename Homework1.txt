@@ -1,29 +1,28 @@
-Task 01 
+Task 01
 
-A Markov Decision process can be applied to the game of chess. There states would refer to the position of the single tokens.
-There are 12 different tokens and the board is an 8*8 field. Therefore there are 8*8*13 possible states. However, in that sense there are also
-cases /states included which do not conform with the rules of chess e.g that the king can be put on every field. The actions correspond to the rules of 
+A Markov Decision process can be applied to the game of chess. There, states would refer to the position of the single tokens.
+There are 12 different tokens and the board is consists of 8*8 fields. Therefore there are 8*8*13 possible states. However, in that sense there are also
+cases /states included which do not conform with the rules of chess e.g that the king can be put on every field. The actions correspond to the rules of
 chess, in other words, one action means moving one token of one agent with respect to the rules. The Reward will be positive for capturing opponent tokens
-and high if one is winning. The reward corresponds to the opponent which was captured e.g. queen has a higher value than a pawn. The State transitions 
+and high if one is winning. The reward corresponds to the opponent which was captured e.g. queen has a higher value than a pawn. The State transitions
 equal to the movement of the tokens (current action), for example if one token changes its position or captures one, and additionally the current state,
-where the token is positioned. What also is part of that is the state in which the action ends, the new state. The probability distribution, policy, of the
-chess game should be matched onto the probability which is the highest to win, or which will guarantee the highest reward after performing a certain action.
-the policy may change as the Agent gains more experience during the learning process. For example, the Agent may start from a random policy, where the 
-probability of all actions is uniform; meanwhile,the Agent will hopefully learn to optimize its policy toward reaching a better policy. In an initial 
-iteration, this Agent performs a random action in each state and tries tolearn whether the action is good or bad based on the reward obtained. Over a 
-series of iterations, the Agent will learn to perform good actions in each state, which gives apositive reward. Finally, the Agent will learn a good 
+where the token is positioned. What also is part of that is the state in which the action ends, the new state. The probability distribution, policy, of the chess game should be matched onto the probability which is the highest to win, or which will guarantee the highest reward after performing a certain action.
+The policy may change as the Agent gains more experience during the learning process. For example, the Agent may start from a random policy, where the
+probability of all actions is uniform; meanwhile,the Agent will hopefully learn to optimize its policy toward reaching a better policy. In an initial
+iteration, this Agent performs a random action in each state and tries to learn whether the action is good or bad based on the reward obtained. Over a
+series of iterations, the Agent will learn to perform good actions in each state, which gives a positive reward. Finally, the Agent will learn a good
 policy or optimal policy.
 
 
 
-Task 0:
+Task 02:
 LunarLander:
 
-set of states: 
-The set of states is a vector of length 8. 
+set of states:
+The set of states is a vector of length 8.
 
 The state vector is structured like this:
-[ x-coordinate of the lander, 
+[ x-coordinate of the lander,
   y-coordinate of the lander,
   x-velocity,
   y-velocity,
@@ -40,12 +39,23 @@ Actions: There are four possible actions:
 
 The state transition function is a physics simulation that determines in which position the lander ends up in the next frame when doing one of the four actions.
 
-We define the reward of landing on the landing pad and being still on the ground as +200. If the lander crashes the reward is -100. If the lander is moving from the landing pad again after landing, the lander looses the reward again. When one leg touches the ground it gets a reward of +10 for each leg. 
-Each frame the reward is -0.3 for using the main engine and -0.03 for using one of the side orientation to force the lander to land quickly and to not waste fuel.
+We define the reward of landing on the landing pad and being still on the ground as +200. If the lander crashes the reward is -100. If the lander is moving from the landing pad again after landing, the lander loses the reward again. When one leg touches the ground it gets a reward of +10 for each leg.
+Each frame the reward is -0.3 for using the main engine and -0.03 for using one of the side orientation engines to force the lander to land quickly and to not waste fuel.
 
-The policy is formalized as Pi( a | s ). We define this as a Categorical distribution with 4 elements, where each element represents the probability of doing one of the four actions in each state. 
-
-
+The policy is formalized as Pi( a | s ). We define this as a Categorical distribution with 4 elements, where each element represents the probability of doing one of the four actions in each state.
 
 
-Task 03 
+
+
+Task 03:
+The environment dynamics consist of the state transition function and the reward function.
+The state transition function p(s’|s, a) describes which actions performed in specific states lead to which other states, or more formally the probability of ending up in state s' when taking the action a in state s.
+The reward function describes the (expected) reward that an action in a specific state generates.
+
+Examples:
+state transition functions: In the car racing environment a state transition function could be a (simplified) physics simulation, in chess the state transition function would lead to a state where the piece that was moved is at the new position in the next state while the rest of the board remains the same.
+reward functions: For a car a reward function might positively reward reaching the destination and doing so quickly, while violating traffic laws or running things over might lead to negative rewards.
+In chess positive rewards could be given for capturing opponent pieces and winning the game, with negative rewards for losing pieces or the game.
+
+
+The environment dynamics are usually not known in practice, however they can still be used practically by using an estimate of them or learning them, which in practice is usually good enough.
