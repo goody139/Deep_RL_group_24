@@ -1,0 +1,24 @@
+Task 01 
+
+A Markov Decision process can be applied to the game of chess. There states would refer to the position of the single tokens.
+There are 12 different tokens and the board is an 8*8 field. Therefore there are 8*8*13 possible states. However, in that sense there are also
+cases /states included which do not conform with the rules of chess e.g that the king can be put on every field. The actions correspond to the rules of 
+chess, in other words, one action means moving one token of one agent with respect to the rules. The Reward will be positive for capturing opponent tokens
+and high if one is winning. The reward corresponds to the opponent which was captured e.g. queen has a higher value than a pawn. The State transitions 
+equal to the movement of the tokens (current action), for example if one token changes its position or captures one, and additionally the current state,
+where the token is positioned. What also is part of that is the state in which the action ends, the new state. The probability distribution, policy, of the
+chess game should be matched onto the probability which is the highest to win, or which will guarantee the highest reward after performing a certain action.
+the policy may change as the Agent gains more experience during the learning process. For example, the Agent may start from a random policy, where the 
+probability of all actions is uniform; meanwhile,the Agent will hopefully learn to optimize its policy toward reaching a better policy. In an initial 
+iteration, this Agent performs a random action in each state and tries tolearn whether the action is good or bad based on the reward obtained. Over a 
+series of iterations, the Agent will learn to perform good actions in each state, which gives apositive reward. Finally, the Agent will learn a good 
+policy or optimal policy.
+
+
+
+Task 02 
+
+
+
+
+Task 03 
