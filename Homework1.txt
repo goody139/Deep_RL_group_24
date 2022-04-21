@@ -16,7 +16,34 @@ policy or optimal policy.
 
 
 
-Task 02 
+Task 0:
+LunarLander:
+
+set of states: 
+The set of states is a vector of length 8. 
+
+The state vector is structured like this:
+[ x-coordinate of the lander, 
+  y-coordinate of the lander,
+  x-velocity,
+  y-velocity,
+  angle,
+  the angular velocity,
+  a boolean whether the left leg touches the ground,
+  a boolean whether the right leg touches the ground]
+ 
+Actions: There are four possible actions:
+[ do nothing,
+  fire left orientation engine,
+  fire main engine
+  fire right orientation engine]
+
+The state transition function is a physics simulation that determines in which position the lander ends up in the next frame when doing one of the four actions.
+
+We define the reward of landing on the landing pad and being still on the ground as +200. If the lander crashes the reward is -100. If the lander is moving from the landing pad again after landing, the lander looses the reward again. When one leg touches the ground it gets a reward of +10 for each leg. 
+Each frame the reward is -0.3 for using the main engine and -0.03 for using one of the side orientation to force the lander to land quickly and to not waste fuel.
+
+The policy is formalized as Pi( a | s ). We define this as a Categorical distribution with 4 elements, where each element represents the probability of doing one of the four actions in each state. 
 
 
 
