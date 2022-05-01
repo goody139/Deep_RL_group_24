@@ -360,7 +360,7 @@ class gridworld():
         if current_x == self.t_pos[0] and current_y == self.t_pos[1]:
             is_terminal = True
 
-        reward += -1
+        reward += -0.1
         # print("reward", reward, "move", move, "current pos", current_x, current_y, "apos", self.a_pos)
         return self.a_pos, reward, is_terminal
 
@@ -371,6 +371,11 @@ class gridworld():
         A = pd.DataFrame(self.current_state)
         A.columns = [''] * A.shape[1]
         print(A.to_string(index=False))
+
+
+    def set_to_state(self, grid, a_pos):
+        self.current_state = grid
+        self.a_pos = a_pos
 
 
 
