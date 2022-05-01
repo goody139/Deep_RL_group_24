@@ -123,7 +123,8 @@ class gridworld():
             min_path_len = manhattan_dist(self.a_pos, self.t_pos)
 
             if not nb_blocked:
-                nb_blocked = np.random.randint(0, self.fields - min_path_len)
+                #nb_blocked = np.random.randint(0, self.fields - min_path_len)
+                nb_blocked = 0
 
             max_path_len = self.fields - nb_blocked
             path_len = np.random.randint(min_path_len, max_path_len + 1)
@@ -214,7 +215,6 @@ class gridworld():
                 else:
                     print("on start", current_x, current_y)
 
-                vis(grid)
 
                 if remaining_steps == 0:
                     print("done walking, goal reached:", end_reached)
@@ -279,7 +279,7 @@ class gridworld():
         Applies the state transition dynamics and reward dynamics based on the state of the environment and the action
         argument.
 
-        :param action: String indictating the agent movement, one of "left", "right", "up" "down"
+        :param action: String indicating the agent movement, one of "left", "right", "up" "down"
         :return: (1) The agent position (should be new state?), (2) the reward of this step, (3) a boolean indicating whether this state is terminal.
         """
         current_x = self.a_pos[0]
@@ -360,7 +360,7 @@ class gridworld():
         if current_x == self.t_pos[0] and current_y == self.t_pos[1]:
             is_terminal = True
 
-
+        reward += -1
         # print("reward", reward, "move", move, "current pos", current_x, current_y, "apos", self.a_pos)
         return self.a_pos, reward, is_terminal
 
@@ -371,14 +371,8 @@ class gridworld():
         A = pd.DataFrame(self.current_state)
         A.columns = [''] * A.shape[1]
         print(A.to_string(index=False))
-        # with np.printoptions(np.set_printoptions(formatter={'float': '{: 0.3f}'.format})):
-        #     print(self.current_state)
 
 
-def vis(d):
-    A = pd.DataFrame(d)
-    A.columns = [''] * A.shape[1]
-    print(A.to_string(index=False))
 
 g = gridworld()
 g.visualize()
