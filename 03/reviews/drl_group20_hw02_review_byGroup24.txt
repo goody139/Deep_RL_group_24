@@ -1,0 +1,34 @@
+Review of Homework 02 of Group 20:
+
+Review by group 24
+
+Task 01:
+
+The following categories are required according to the task sheet:
+At least 5x5 size: Yes
+
+Some tiles are blocked: Yes, some tiles are blocked 
+Exactly one tile is positive: Yes only one state is positive
+Mutiple tiles negative reward: Yes
+For the above three categories you implemented these in a way, that you just initialize these values correctly when creating the gridworld, which is a totally valid for the scope of this task. One way you could still improve this, is with a check in the constructor.
+
+Fixed starting point: (0,0) Yes
+Non-deterministic state transition: Yes, good. Also with a check for possible actions and if the agent tries to leave the field in all directions.
+
+Object representing gridworld: Yes
+
+The gridworld is randomly or fixed: fixed and hard-coded
+
+Methods reset(), step(), visualize(): Yes
+
+
+Task 02:
+n-step SARSA: Yes
+The solution is prepared to solve the task for any N: 1-Step SARSA is possible, Monte Carlo seems to be also possible with a large enough N
+Visualization of Q-values: Yes
+
+
+Summary: Your solution is really good: You fulfilled all the requirements and the code seems to work.
+We especially like your coding style as you use self-explanatory variable names. 
+However, some parts of your code could benefit from a little bit more commentary. 
+
