@@ -1,0 +1,18 @@
+Task 1:
+- some of the functions you use in the fefinitions are not defined - to describe the actions you use isAvaibleAction which is not described, for makeMove you do not describe how the next state is chosen
+
+- otherwise, nicely described the game formally with mathematical notation, your choices for the actions, policy, and reward make sense
+
+Task 2:
+- the two first bullet points for the rewards seem to be examples and not really formal rules to determine the reward
+- you seem to be missing a link to the repository which you want to refernce
+
+Task 3:
+- Interesting point with the computing power, you had a copletely different approach to the second part of the question than we did
+- in practice it is often assumed that the environment dynamics are known even if they are not and estimates are used in their stead, which we thought meant that they could be used practically, although one could argue that then the env. dynamics are not actually used but instead an estimation of them is
+
+
+
+Overall:
+- couldn't help but notice several typos, maybe just quickly run it through spell check before uploading
+- nice work using latex

@@ -1,0 +1,46 @@
+Task 1:
+• Your gridworld should be at least 5x5 in size. -> Done
+• At least a few tiles should be blocked (i.e. the agent can not access them) -> done, "" tiles are not accessed
+• Exactly one tile should yield a positive reward when accessing it. This tile
+should correspond to a terminal state! -> Done, tile F
+• Multiple tiles should yield a negative reward when stepping on them -> Done, tiles T
+• There should be a fixed starting point for your agent -> always starts at 0,0
+• For a few tiles, there should be a non-deterministic state transition func-
+tion. Come up with your own ideas, for inspiration feel invited to google
+windy gridworld -> not implemented
+• Make your sure implementation creates an object representing this grid-
+world -> done
+• Your gridworld should either be created randomly (make sure paths to
+the terminal state are not completely blocked!) or be created in a fixed
+way (i.e. with you specifying either on initialization or hardcoding where
+positive/negative rewards are and where blocked tiles are, etc.) -> initialization manually when creating the gridworld object (passed as parameter) -> how the passed grid should look is not explained, comments would have been helpful here
+• Your gridworld implementation should implement at least the followng
+functions, similar to an OpenAI gym (checking this out is not necessary,
+but might help: https://gym.openai.com/docs/environments)
+– reset() — Resets the gridworld to its initial state. Returns the initial
+state.
+– step(action) — Applies the state transition dynamics and reward
+dynamics based on the state of the environment and the action ar-
+gument. Returns (1) The new state, (2) the reward of this step, (3)
+a boolean indicating whether this state is terminal.
+– visualize() — visualizes the current state (e.g. printing characters
+representing the grid on the command line, don’t create too much
+effort with this if you are not familiar with tools making this easy)
+-> Done
+
+--> Overall nice gridworld implementation, but missing fields with different transition function. Grid has to be passed as parameter, would have been nicer to either have some fixed ones implemented in the gridworld class that can be selected or creating a random one on gridworld initialization
+-> Also, comments would have been nice.
+
+
+Task 2:
+Implement Tabular n-step SARSA to solve the gridworld you have created.
+• Your implementation should work for any n and be parameterized in that
+regard. Specifically make sure you can recover both a 1-Step SARSA and
+Monte-Carlo Control algorithm from your implementation -> Done – no explicit way to recover Monte-Carlo, but possible by setting a high n
+• Optionally: Create a visualization of the Q-values controlling your policy.
+This takes extra effort, but can help you understand what is happening if
+there is a bug in your implementation. -> Done
+
+-> might have been nicer to wrap the sarsa implementation in a function that can be called with the parameters (episodes, n, gamma, alpha, visualize, grid)
+-> comments would really help with code readability
+-> otherwise nice implementation, code is clean and mostly readable, though some not immediately obvious things like how laststeps is used could really profit from comments
