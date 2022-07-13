@@ -1,0 +1,26 @@
+Task 1: Experience replay buffer
+
+- fifo buffer: yes
+- has maximum size: yes
+- when an element is added and max_size is reached, oldest element is forgotten: part of deque
+- each element is a tuple of (s, a, r, s'): yes, assumes correct input
+- recommended: wrapped in tf dataset: no, but sampling is provided in the class, might be inefficient though due to many for loops
+
+-> Using deque makes your implementation really simple and clean. Your sampling method might be a bit slow though as you iterate through the batch five times. It might be possible to use some numpy functions for reshaping the array to achieve the same thing more efficiently.
+
+Task 2: DQN
+- parameterized with appropriate input size and shape: done
+- parameterized with appropriate output size: done
+
+-> You used a simple sequential model and provided a function to parameterize and get the compiled model. Simple and effective - also using a sequential model prevents a lot of problems one can have with the other APIs.
+
+Task 3: DQN training
+- implemented training algorithm: yes
+- implemented some sort of delay: not implemented
+- implemented evaluation (at least graph of average return per run): yes, also prints intermediate results for each episode
+
+-> your code for the training is clean and putting it in a separate class helps with readability. Good implementation of standard DQN training, but you did not implement any kind of delay, which might make training less successful – the network currently does not seem to learn the solution, but it might just take very long.
+
+
+Overall:
+Your code is very readable on its own, but it could still benefit from adding some comments, seeing as there is not a single comment in your code. Other than that, nice clean coding style, mostly efficient, so well done! 
