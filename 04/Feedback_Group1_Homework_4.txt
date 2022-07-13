@@ -1,0 +1,25 @@
+Task 1: Experience replay buffer
+
+- fifo buffer: yes
+- has maximum size: yes
+- when an element is added and max_size is reached, oldes element is forgotten
+- each element is a tuple fo (s, a, r, s'): yes, assumes correct input
+
+-> Putting your replay buffer in an external script makes your implementation simple and clean. It might be possible to use some numpy functions for reshaping the array to achieve the same thing more efficintly.
+
+Task 2: DQN
+- parameterized with appropriate input size and shape: done
+- parameterized with appropriate output size: done
+
+-> You used a simple keras model and used simply model.compile. Simple and effective - also using a sequential model prevents a lot of problems one can have with the other APIs.
+
+Task 3: DQN training
+- implemented training algorithm: yes
+- implemented some sort of delay: could not find an implementation for that maybe we overlooked it
+- implemented evaluation (at least graph of average return per run): yes, also prints intermediate results for each episode
+
+-> your code for the training is clean and putting it in a seperate class helps with readability. Good implementation of standard DQN training, but you did not implement any kind of delay, which might make training less successful – the network currently does not seem to learn the solution, but it might just take very long.
+
+
+Overall:
+Your code is well structured, however it could still benefit from adding some comments for easier reading purposes and understanding. Other than that, nice clean coding style, mostly efficient, so well done!
