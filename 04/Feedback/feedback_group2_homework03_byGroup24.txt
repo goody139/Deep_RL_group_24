@@ -1,0 +1,14 @@
+
+Feedback for Homework 03 by group 24:
+
+- looks like a perfect solution
+
+Good: - You implemented Delayed DQN
+      - with Polyak Averaging
+      - Multithreading?!
+      - small network with 2 hidden layers
+      - good error handling
+      - experience replay buffer: FIFO, tf.Dataset	
+      - very good, explanatory comments
+      - according to the result graph you uploaded the DQN learns quite well and the lander achieves
+      at least 0 return on average
